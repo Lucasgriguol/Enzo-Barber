@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enzo Barber | Reserva de Turnos</title>
+
+    <meta name="description"
+        content="Reservá tu turno online en Enzo Barber. Elegí servicio, fecha y horario en pocos segundos.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+
+                <!-- Reemplazar por tu logo -->
+                <img src="logo.jpeg" alt="Enzo Barber" class="logo">
+
+                <div>
+                    <h1>ENZO BARBER</h1>
+                    <p>Reserva de Turnos Online</p>
+                </div>
+
+            </div>
+
+            <nav>
+                <a href="#servicios">Servicios</a>
+                <a href="#horarios">Horarios</a>
+                <a href="#reservar">Reservar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <span class="badge">
+                ✂️ Barbería Profesional
+            </span>
+
+            <h2>
+                Reservá tu turno online
+            </h2>
+
+            <p>
+                Elegí tu servicio, seleccioná un horario disponible y asegurá tu lugar en pocos segundos.
+            </p>
+
+            <div class="hero-features">
+                <span>✂ Cortes modernos</span>
+                <span>🪒 Barba profesional</span>
+                <span>📅 Reserva online</span>
+            </div>
+
+            <a href="#reservar" class="btn-primary">
+                Reservar Turno
+            </a>
+        </div>
+
+    </section>
+
+    <!-- SERVICIOS -->
+
+    <section id="servicios" class="section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Servicios
+            </h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <h3>Clásico</h3>
+
+                    <div class="price">
+                        $12.000
+                    </div>
+
+                    <p>
+                        Corte a tijera y máquina para un look prolijo. Incluye el perfilado de cejas.
+                    </p>
+
+                    <span class="duration">
+                        45 minutos
+                    </span>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>Barba</h3>
+
+                    <div class="price">
+                        $5.000
+                    </div>
+
+                    <p>
+                        Arreglo y mantenimiento hecho exclusivamente con máquina y navaja.
+                    </p>
+
+                    <span class="duration">
+                        15 minutos
+                    </span>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>Corte + Barba</h3>
+
+                    <div class="price">
+                        $15.000
+                    </div>
+
+                    <p>
+                        El combo completo. Incluye el corte de pelo, el perfilado de cejas y el arreglo de barba con máquina y navaja.
+                    </p>
+
+                    <span class="duration">
+                        60 minutos
+                    </span>
+                    <br>
+                    <br>
+                    <span class="popular-badge">
+                        MÁS ELEGIDO
+                    </span>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HORARIOS -->
+
+    <section id="horarios" class="section dark-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Horarios de Atención
+            </h2>
+
+            <div class="schedule-grid">
+
+                <div class="schedule-card">
+
+                    <h3>
+                        Lunes a Viernes
+                    </h3>
+
+                    <p>
+                        10:00 - 13:00
+                    </p>
+
+                    <p>
+                        17:00 - 21:30
+                    </p>
+
+                </div>
+
+                <div class="schedule-card">
+
+                    <h3>
+                        Sábados
+                    </h3>
+
+                    <p>
+                        10:00 - 13:00
+                    </p>
+
+                    <p>
+                        17:00 - 22:00
+                    </p>
+
+                </div>
+
+                <div class="schedule-card">
+
+                    <h3>
+                        Domingos
+                    </h3>
+
+                    <p class="closed">
+                        Cerrado
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RESERVA -->
+
+    <section id="reservar" class="section">
+
+        <div class="container reservation-container">
+
+            <h2 class="section-title">
+                Reservar Turno
+            </h2>
+
+            <form id="bookingForm" class="booking-form">
+
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+
+                    <input type="text" id="nombre" required placeholder="Tu nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+
+                    <input type="tel" id="telefono" required placeholder="3511234567">
+                </div>
+
+                <div class="form-group">
+                    <label for="observaciones">
+                        Observaciones (opcional)
+                    </label>
+
+                    <textarea id="observaciones" rows="4"
+                        placeholder="Ej: solo máquina, rebajar arriba, etc."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Servicio</label>
+
+                    <select id="servicio" required>
+
+                        <option value="">
+                            Seleccionar
+                        </option>
+
+                        <option value="Clásico" data-duration="45">
+                            Clásico - $12.000
+                        </option>
+
+                        <option value="Barba" data-duration="15">
+                            Barba - $5.000
+                        </option>
+
+                        <option value="Corte + Barba" data-duration="60">
+                            Corte + Barba - $15.000
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">
+                        Fecha
+                    </label>
+
+                    <input type="date" id="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hora">
+                        Horario Disponible
+                    </label>
+
+                    <select id="hora" required>
+
+                        <option value="">
+                            Seleccioná una fecha
+                        </option>
+
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary btn-full">
+                    Reservar Turno
+                </button>
+
+            </form>
+
+            <!-- LOADER -->
+
+            <div id="loader" class="loader hidden">
+                Consultando disponibilidad...
+            </div>
+
+            <!-- MENSAJES -->
+
+            <div id="successMessage" class="success-message hidden">
+
+                <h3>
+                    ✅ Reserva Confirmada
+                </h3>
+
+                <p>
+                    Tu turno fue registrado correctamente.
+                </p>
+
+                <a id="whatsappLink" href="#" target="_blank" class="btn-whatsapp">
+                    Enviar por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="section dark-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Contacto
+            </h2>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <h3>
+                        📍 Dirección
+                    </h3>
+
+                    <p>
+                        Talma 3075, B° Ameghino Sur
+                    </p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <h3>
+                        📞 WhatsApp
+                    </h3>
+
+                    <p>
+                        3513484949
+                    </p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <h3>
+                        📸 Instagram
+                    </h3>
+
+                    <a href="https://www.instagram.com/enzo__barber_/" target="_blank">
+                        @enzo__barber_
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div>
+                <p>
+                    © 2026 Enzo Barber - Todos los derechos reservados.
+                </p>
+
+                <p class="credits">
+                    Sitio desarrollado por <strong>Dayenu Digital</strong>
+                </p>
+            </div>
+
+            <a href="admin.html" class="admin-link">
+                Administración
+            </a>
+
+        </div>
+
+    </footer>
+
+    <!-- FIREBASE -->
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/script.js"></script>
+
+</body>
+
+</html>

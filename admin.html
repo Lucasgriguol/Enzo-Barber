@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panel Administrativo | Enzo Barber</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <section id="loginSection" class="admin-login">
+
+        <div class="login-card">
+
+            <h2>
+                Panel Administrativo
+            </h2>
+
+            <div class="form-group">
+
+                <label>
+                    Contraseña
+                </label>
+
+                <input type="password" id="passwordInput" placeholder="Ingresar contraseña">
+
+            </div>
+
+            <button id="loginBtn" class="btn-primary btn-full">
+                Ingresar
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- PANEL -->
+
+    <section id="panelSection" class="admin-panel hidden">
+
+        <div class="container">
+
+            <div class="admin-top">
+
+                <div>
+
+                    <h1>
+                        Agenda Enzo Barber
+                    </h1>
+
+                    <p class="counter">
+                        Total turnos:
+                        <span id="totalTurnos">
+                            0
+                        </span>
+                    </p>
+
+                    <p class="counter">
+                        Turnos hoy:
+                        <span id="turnosHoy">
+                            0
+                        </span>
+                    </p>
+
+                    <p class="counter">
+                        Ingresos estimados:
+                        $
+                        <span id="ingresosTotal">
+                            0
+                        </span>
+                    </p>
+
+                </div>
+
+                <div class="admin-actions">
+
+                    <input type="date" id="filterDate">
+
+                    <input type="text" id="searchName" placeholder="Buscar cliente...">
+
+                    <button id="logoutBtn" class="delete-btn">
+                        Cerrar sesión
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div id="emptyState" class="hidden">
+                <div class="success-message">
+                    No hay turnos registrados.
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Cliente</th>
+                            <th>Teléfono</th>
+                            <th>Servicio</th>
+                            <th>Precio</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Observaciones</th>
+                            <th>Acción</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="turnosTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/admin.js"></script>
+
+</body>
+
+</html>
