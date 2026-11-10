@@ -2,51 +2,46 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Panel Administrativo | Enzo Barber</title>
     <link rel="icon" href="logo.jpeg" type="image/png">
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
 
-    <!-- LOGIN -->
+    <!-- TOASTS -->
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
+    <!-- LOGIN -->
     <section id="loginSection" class="admin-login">
 
         <div class="login-card">
 
-            <h2>
-                Panel Administrativo
-            </h2>
+            <h2>Panel Administrativo</h2>
+
+            <p class="login-subtitle">Ingresá tu contraseña para acceder</p>
 
             <div class="form-group">
-
-                <label>
-                    Contraseña
-                </label>
-
+                <label>Contraseña</label>
                 <input type="password" id="passwordInput" placeholder="Ingresar contraseña">
-
             </div>
 
             <button id="loginBtn" class="btn-primary btn-full">
                 Ingresar
             </button>
 
+            <a href="index.html" class="login-back">← Volver al sitio</a>
+
         </div>
 
     </section>
 
     <!-- PANEL -->
-
     <section id="panelSection" class="admin-panel hidden">
 
         <div class="container">
@@ -54,63 +49,67 @@
             <div class="admin-top">
 
                 <div>
-
-                    <h1>
-                        Agenda Enzo Barber
-                    </h1>
-
-                    <p class="counter">
-                        Total turnos:
-                        <span id="totalTurnos">
-                            0
-                        </span>
+                    <h1>Agenda Enzo Barber</h1>
+                    <p class="last-update">
+                        Última actualización:
+                        <span id="lastUpdate">-</span>
                     </p>
-
-                    <p class="counter">
-                        Turnos hoy:
-                        <span id="turnosHoy">
-                            0
-                        </span>
-                    </p>
-
-                    <p class="counter">
-                        Ingresos estimados:
-                        $
-                        <span id="ingresosTotal">
-                            0
-                        </span>
-                    </p>
-
                 </div>
 
                 <div class="admin-actions">
-
-                    <input type="date" id="filterDate">
-
-                    <input type="text" id="searchName" placeholder="Buscar cliente...">
-
-                    <button id="logoutBtn" class="delete-btn">
-                        Cerrar sesión
-                    </button>
-
+                    <input type="date" id="filterDate" title="Filtrar por fecha">
+                    <input type="text" id="searchName" placeholder="🔍 Buscar cliente...">
+                    <select id="filterStatus" title="Filtrar por estado">
+                        <option value="">Todos los estados</option>
+                        <option value="pendiente">Pendientes</option>
+                        <option value="completado">Completados</option>
+                        <option value="cancelado">Cancelados</option>
+                    </select>
+                    <button id="refreshBtn" class="btn-secondary" title="Refrescar">🔄</button>
+                    <button id="exportBtn" class="btn-secondary" title="Exportar CSV">📥 CSV</button>
+                    <button id="logoutBtn" class="delete-btn">Salir</button>
                 </div>
 
             </div>
 
+            <!-- STATS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <h3>Total turnos</h3>
+                    <span id="totalTurnos">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Turnos hoy</h3>
+                    <span id="turnosHoy">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pendientes</h3>
+                    <span id="turnosPendientes">0</span>
+                </div>
+
+                <div class="stat-card stat-card-gold">
+                    <h3>Ingresos completados</h3>
+                    <span>$<span id="ingresosTotal">0</span></span>
+                </div>
+
+            </div>
+
+            <!-- ESTADO VACÍO -->
             <div id="emptyState" class="hidden">
                 <div class="success-message">
-                    No hay turnos registrados.
+                    <h3>📋 No hay turnos</h3>
+                    <p>No hay turnos que coincidan con los filtros aplicados.</p>
                 </div>
             </div>
 
+            <!-- TABLA -->
             <div class="table-wrapper">
-
                 <table>
-
                     <thead>
-
                         <tr>
-
                             <th>Cliente</th>
                             <th>Teléfono</th>
                             <th>Servicio</th>
@@ -118,23 +117,29 @@
                             <th>Fecha</th>
                             <th>Hora</th>
                             <th>Observaciones</th>
-                            <th>Acción</th>
-
+                            <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
-
                     </thead>
-
-                    <tbody id="turnosTable">
-
-                    </tbody>
-
+                    <tbody id="turnosTable"></tbody>
                 </table>
-
             </div>
 
         </div>
 
     </section>
+
+    <!-- MODAL DE CONFIRMACIÓN -->
+    <div id="confirmModal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+        <div class="modal">
+            <h3 id="confirmTitle">Confirmar acción</h3>
+            <p id="confirmMessage" class="modal-message"></p>
+            <div class="modal-actions">
+                <button type="button" id="confirmCancel" class="btn-secondary">Cancelar</button>
+                <button type="button" id="confirmOk" class="btn-primary">Aceptar</button>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="js/firebase.js"></script>
     <script type="module" src="js/admin.js"></script>

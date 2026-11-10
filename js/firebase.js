@@ -10,9 +10,13 @@ import {
     addDoc,
     getDocs,
     deleteDoc,
+    updateDoc,
     doc,
     query,
-    orderBy
+    where,
+    orderBy,
+    onSnapshot,
+    serverTimestamp
 }
 from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
@@ -47,7 +51,11 @@ export {
     addDoc,
     getDocs,
     deleteDoc,
+    updateDoc,
     doc,
     query,
-    orderBy
+    where,
+    orderBy,
+    onSnapshot,
+    serverTimestamp
 };
